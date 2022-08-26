@@ -1,0 +1,47 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'spec/**/*'
+    - 'node_modules/**/*'
+    - 'config/**/*'
+  DisplayCopNames: true
+
+Layout/LineLength:
+  Max: 100
+  AllowedPatterns: ['\A#']
+  Exclude:
+    - "db/migrate/*.rb"
+
+Metrics/BlockLength:
+  Max: 25
+  Exclude:
+    - "lib/tasks/*"
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 50 # default 15
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 30
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Metrics/CyclomaticComplexity:
+  Max: 20
+Metrics/PerceivedComplexity:
+  Max: 15
